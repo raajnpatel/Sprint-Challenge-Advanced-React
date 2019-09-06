@@ -1,8 +1,8 @@
 import React, { useEffect }from 'react';
 
-import useLocalStorage from './useLocalStorage'
+import useLocalStorage from './LocalStorage'
 
-const useDarkMode = () => {
+const DarkMode = () => {
 
     const [someValue, setSomeValue] = useLocalStorage('mode');
     useEffect(()=>{
@@ -15,4 +15,4 @@ const useDarkMode = () => {
     return [someValue,setSomeValue];
 };
 
-export default useDarkMode;
+export default DarkMode;
