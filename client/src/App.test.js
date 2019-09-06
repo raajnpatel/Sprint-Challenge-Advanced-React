@@ -17,4 +17,10 @@ it('darkmode', () => {
   expect(clicked).toBe(false);
 });
 
-
+it('darkmode', () => {
+  let clicked = true;
+  const { getByText } = render(<App darkmode={() => clicked = false} />);
+  const toggleDark = getByText(/dark mode/i);
+  fireEvent.click(toggleDark);
+  expect(clicked).toBe(true);
+});
