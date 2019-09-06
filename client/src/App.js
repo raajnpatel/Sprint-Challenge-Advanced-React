@@ -38,14 +38,16 @@ class App extends React.Component {
     return(
         <div>
             <button onClick = {toggleDark}>Dark Mode</button>
+            <div className = "innerCard">
             {props.players.map(player => (
-                <div key = {player.id}>
-                    {player.name}
-                    {player.id}
-                    {player.country}
-                    {player.searches}
+                <div className = "playerCard" key = {player.id}>
+                    <h1>{player.name}</h1>
+                    <p>{(player.id)+1}</p>
+                    <h2>{player.country}</h2>
+                    <p>{player.searches}</p>
                 </div>
             ))}
+            </div>
         </div>
     )
     }
