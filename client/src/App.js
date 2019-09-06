@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import DarkMode from "./hooks/DarkMode";
 
 class App extends React.Component {
     constructor() {
@@ -27,5 +28,26 @@ class App extends React.Component {
         );
     }
 }
+
+    function SoccerPlayer(props) {
+    const [darkMode, setDarkMode] = DarkMode(false);
+    const toggleDark = e => {
+        e.preventDefault();
+        setDarkMode(!darkMode);
+    };
+    return(
+        <div>
+            <button onClick = {toggleDark}>Dark Mode</button>
+            {props.players.map(player => (
+                <div key = {player.id}>
+                    {player.name}
+                    {player.id}
+                    {player.country}
+                    {player.searches}
+                </div>
+            ))}
+        </div>
+    )
+    }
 
 export default App;
